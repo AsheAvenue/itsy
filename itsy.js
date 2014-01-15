@@ -10,8 +10,6 @@ var itz = function() {};
 
 itz.version    = '0.0.1';
 
-itz.ArrayProto = Array.prototype;
-
 itz.getId = function(id) {
     if (id == null) return;
     return document.getElementById(id);
@@ -40,7 +38,9 @@ itz.getClass = function(className) {
 
 itz.each = function(obj, iterator, context) {
     if (obj == null) return;
-    if (obj.length === +obj.length) {
+    if (Array.prototype.forEach && obj.forEach === Array.prototype.forEach) {
+        obj.forEach(iterator, context);
+    } else if (obj.length === +obj.length) {
         for (var i = 0, length = obj.length; i < length; i++) {
             if (iterator.call(context, obj[i], i, obj) === {}) return;
         }
