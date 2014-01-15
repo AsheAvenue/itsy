@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Test</title>
+    </head>
+    <body>
+
+        <h1>hello, world!</h1>
+
+        <div class="bitty">Flip that diggy!</div>
+        <div class="bitty">Bitty 2</div>
+        <div class="bitty">Flip that diggy!</div>
+        <div class="bitty diggy">Flip that diggy!</div>
+        
+        <div id="special">So so special</div>
+        
+        <script src="itsy.js"></script>
+        <script>
+            console.log(itz.getClass('bitty'));
+
+            console.log( itz.getId('special') );
+
+            var bitties = itz.getClass('bitty');
+            
+            
+            itz.each(itz.getClass('bitty'), function(obj){
+                console.log(obj.innerText);
+            });
+
+        </script>
+    </body>
+</html>
